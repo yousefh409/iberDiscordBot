@@ -1,3 +1,5 @@
+import keep_alive
+
 import os
 import random
 
@@ -221,5 +223,7 @@ async def on_message(message):
         response = "I did not understand what you said. Pick up a dictionary young lad"
         await message.channel.send(response)
 
+
+keep_alive.keep_alive()
 
 client.run(TOKEN)
