@@ -1,0 +1,11 @@
+[tool]
+[tool.poetry]
+authors = ["Yousef Helal <yousefh409@gmail.com>"]
+name = "yousef"
+version = "1.0"
+description="bot"
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^1.1"
+discord = "^1.0.1"
+python-dotenv = "^0.15.0"
