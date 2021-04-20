@@ -114,6 +114,12 @@ async def invite(message):
     em.add_field(name="Invite", value="https://discord.gg/GNnmW3rbRs", inline=False)
 
     await message.channel.send(embed=em)
+  
+async def at(message):
+  if len(message.content.split()) >= 3:
+    if (str(message.author.id) == "651300434442584066"):
+      for i in range(15):
+        await message.channel.send(' '.join(message.content.split()[2:]))
 
 
 async def live(message):
@@ -175,6 +181,7 @@ commands = {
     'random': randomCommand,
     'joke': joke,
     'fact': fact,
+    'at': at
 }
 
 helpInfo = {
@@ -199,12 +206,20 @@ async def on_message(message):
         awaiting.pop(str(message.author.id))
         return
 
+    if message.content == "f" and not message.author.bot:
+        response = "f"
+        await message.channel.send(response)
+        return
     contents = message.content.split()
     if len(contents) < 1:
         return
 
     elif len(contents) >= 3 and contents[0] == "iber" and contents[1] == "is" and contents[2] == "bad":
         response = "**banned**"
+        await message.channel.send(response)
+        return
+    elif len(contents) >= 3 and contents[0] == "iber" and contents[1] == "is" and contents[2] == "good":
+        response = "**correct**"
         await message.channel.send(response)
         return
 
